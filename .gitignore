@@ -1,3 +1,6 @@
 .vagrant
 sample_data
 Vagrantfile
+exercises
+metastore_db
+derby.log
