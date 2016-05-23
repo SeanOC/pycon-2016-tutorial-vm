@@ -33,8 +33,16 @@ apt-get install -y hadoop-conf-pseudo curl vim tmux python-dev python-pip libyam
 chown hadoop /var/log/hadoop-*
 
 # Copy Configs
-cp -Rf /vagrant/configs/mapred-site.xml /etc/hadoop/conf/mapred-site.xml
-cp -Rf /vagrant/configs/yarn-site.xml /etc/hadoop/conf/yarn-site.xml
+TOTAL_MEM=`grep MemTotal /proc/meminfo | awk '{ print $2 }'`
+if [ $TOTAL_MEM -gt 4000000 ]; then
+    echo "****** INSTALLING BIG CONFIGS ******"
+    cp -Rf /vagrant/big-configs/mapred-site.xml /etc/hadoop/conf/mapred-site.xml
+    cp -Rf /vagrant/big-configs/yarn-site.xml /etc/hadoop/conf/yarn-site.xml
+else
+    echo "****** INSTALLING SMALL CONFIGS ******"
+    cp -Rf /vagrant/small-configs/mapred-site.xml /etc/hadoop/conf/mapred-site.xml
+    cp -Rf /vagrant/small-configs/yarn-site.xml /etc/hadoop/conf/yarn-site.xml
+fi
 
 # Format HDFS
 echo "****** Format HDFS ********"
@@ -83,4 +91,4 @@ sudo -u hdfs hadoop fs -chown -R spark:spark /user/spark
 sudo -u hdfs hadoop fs -chmod 1777 /user/spark/applicationHistory
 
 echo "****** Downloading Sample Data ******"
-/vagrant/refresh_data.sh
+sudo -u vagrant /vagrant/refresh_data.sh

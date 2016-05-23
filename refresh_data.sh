@@ -25,10 +25,15 @@ fi
 if [ $DOWNLOAD_NEEDED -ne 0 ]; then
     echo "Downloading updated data sample..."
     curl -s "http://pycon-2016-tutorial.s3.amazonaws.com/1usagov_data.gz" > $TARGET_FILE
-    zcat $TARGET_FILE > $TARGET_UNZIPPED
-    head -n 1000 < $TARGET_UNZIPPED > "$TARGET_UNZIPPED$TINY_SUFFIX"
-    head -n 1000000 < $TARGET_UNZIPPED > "$TARGET_UNZIPPED$SMALL_SUFFIX"
-    echo "Your data sample is now up to date!"
+    echo "Your data sample is now up to date"
 else
-    echo "Your data sample was alrady up to date.  You're good to go!"
+    echo "Your data sample was alrady up to date."
 fi
+
+echo "Copying your sample data into HDFS..."
+zcat $TARGET_FILE > $TARGET_UNZIPPED
+head -n 1000 < $TARGET_UNZIPPED > "$TARGET_UNZIPPED$TINY_SUFFIX"
+head -n 1000000 < $TARGET_UNZIPPED > "$TARGET_UNZIPPED$SMALL_SUFFIX"
+hadoop fs -mkdir -p /user/vagrant/samples/
+hadoop fs -put -f $TARGET_DIR/1usagov_data* /user/vagrant/samples/
+echo "Sample data uploaded to HDFS, you're good to go!"
