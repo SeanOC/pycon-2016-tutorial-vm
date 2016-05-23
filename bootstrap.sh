@@ -28,7 +28,7 @@ echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle/" >> /etc/environment
 source /etc/environment
 
 # Install ALL THE THINGS
-apt-get install -y hadoop-conf-pseudo curl vim tmux python-dev python-pip libyaml-dev jq
+apt-get install -y hadoop-conf-pseudo curl vim tmux python-dev python-pip libyaml-dev jq git
 
 chown hadoop /var/log/hadoop-*
 
@@ -81,3 +81,6 @@ sudo -u hdfs hadoop fs -mkdir /user/spark
 sudo -u hdfs hadoop fs -mkdir /user/spark/applicationHistory
 sudo -u hdfs hadoop fs -chown -R spark:spark /user/spark
 sudo -u hdfs hadoop fs -chmod 1777 /user/spark/applicationHistory
+
+echo "****** Downloading Sample Data ******"
+/vagrant/refresh_data.sh
