@@ -1,6 +1,7 @@
 .vagrant
-sample_data
+sample_data/*
 Vagrantfile
 exercises
 metastore_db
 derby.log
+.DS_Store

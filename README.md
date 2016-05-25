@@ -8,6 +8,12 @@ We're using vagrant to manage the VM as it's free and can run on most sane platf
 
 Before you can do anything you will need to install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
+One you have vagrant installed, you will also need to run the following command:
+
+```
+vagrant plugin install vagrant-hostmanager
+```
+
 ## Pick a config
 
 Before you start a VM you need to pick a config.  Hadoop is a memory hungry monster that is designed to use all of the available resources of large server hardware.  Accordingly, it's a bit tricky to run on machines with fewer resources.
