@@ -22,7 +22,6 @@ if __name__ == '__main__':
             agency_data.append(row)
 
     for line in sys.stdin:
-        print "'{}'".format(line)
         decode = json.loads(line)
 
         if decode['g'] in processed:

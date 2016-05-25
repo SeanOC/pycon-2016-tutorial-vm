@@ -48,7 +48,7 @@ fi
 echo "Copying your sample data into HDFS..."
 zcat $TARGET_FILE > $TARGET_UNZIPPED
 head -n 1000 < $TARGET_UNZIPPED > "$TARGET_UNZIPPED$TINY_SUFFIX"
-head -n 1000000 < $TARGET_UNZIPPED > "$TARGET_UNZIPPED$SMALL_SUFFIX"
+head -n 100000 < $TARGET_UNZIPPED > "$TARGET_UNZIPPED$SMALL_SUFFIX"
 hadoop fs -mkdir -p /user/vagrant/sample_data/
 hadoop fs -put -f $TARGET_DIR/1usagov_data* /user/vagrant/sample_data/
 hadoop fs -put -f $DOMAINS_FILE /user/vagrant/sample_data
