@@ -114,28 +114,28 @@ Below is a sample decode object as well as a description of the provided fields:
 }
 ```
 
-| Key |  Description |
-| --- | ------------ |
-|  h  | User Hash - Unique hash that we generate for each combination of shortened long URL and login.  Useful for referencing sepcific Bitlinks. |
-|  g  | Global Hash - Unique hash that we generate and share for all instances of a long URL.  Useful for referencing documents/URLs. |
-|  l  | Login - User who originally shortened the link.  There are two special users of "Annonymous" and "Bitly" that are used for anon shortening and global hash generation. |
-|  hh | Host Header - Host header of this redirect request (some Bitlinks are valid on multiple short domains). |
-|  u  | URL - Long URL that the user was redirected to. |
-|  r  | Referrer - Referrer header of the Bitlink request. |
-|  a  | User Agent - User Agent header of the Bitlink request. |
-|  i  | IP Address - Will always be empty in this data set to protect user privacy. |
-|  t  | Timestamp - Unix timestamp of when the decode occurred. |
-|  k  | Cookie - Will always be empty in this data set to protect user privacy. |
-|  nk | Known Cookie - Will be 0 if this cookie has not been seen before, 1 if it has. |
-|  hc | Hash Creation - Unix timestamp of when the Bitlink was shortened. |
-|  _id| ID - UUID unique to this decode. |
-|  al | Accept Language - Accept Language header of the decode request. |
-|  c  | Country - 2 letter country code based on the MaxMind GeoIP dataset. |
-|  tz | Timezone - Timezone based on MaxMind GeoIP dataset. |
-|  gr | Geo Region - Based on MaxMind GeoIP dataset (optional). |
-|  cy | City - Based on MaxMind GeoIP dataset (optional). |
-|  mc | MetroCode/DMA Code - Based on MaxMind GeoIP dataset (optional, [lookup table](https://developers.google.com/adwords/api/docs/appendix/cities-DMAregions)). |
-|  ll | Latitude, Longitude - Bsaed on MaxMind GeoIP dataset (optional). |
+| Key |  NAME  |  Description |
+| --- | ------ | ------------ |
+|  h  | User Hash | Unique hash that we generate for each combination of shortened long URL and login.  Useful for referencing sepcific Bitlinks. |
+|  g  | Global Hash | Unique hash that we generate and share for all instances of a long URL.  Useful for referencing documents/URLs. |
+|  l  | Login | User who originally shortened the link.  There are two special users of "Annonymous" and "Bitly" that are used for anon shortening and global hash generation. |
+|  hh | Host Header | Host header of this redirect request (some Bitlinks are valid on multiple short domains). |
+|  u  | URL | Long URL that the user was redirected to. |
+|  r  | Referrer | Referrer header of the Bitlink request. |
+|  a  | User Agent | User Agent header of the Bitlink request. |
+|  i  | IP Address | Will always be empty in this data set to protect user privacy. |
+|  t  | Timestamp | Unix timestamp of when the decode occurred. |
+|  k  | Cookie | Will always be empty in this data set to protect user privacy. |
+|  nk | Known Cookie | Will be 0 if this cookie has not been seen before, 1 if it has. |
+|  hc | Hash Creation | Unix timestamp of when the Bitlink was shortened. |
+|  _id| ID | UUID unique to this decode. |
+|  al | Accept Language | Accept Language header of the decode request. |
+|  c  | Country | 2 letter country code based on the MaxMind GeoIP dataset. |
+|  tz | Timezone | Timezone based on MaxMind GeoIP dataset. |
+|  gr | Geo Region | Based on MaxMind GeoIP dataset (optional). |
+|  cy | City | Based on MaxMind GeoIP dataset (optional). |
+|  mc | MetroCode/DMA Code | Based on MaxMind GeoIP dataset (optional, [lookup table](https://developers.google.com/adwords/api/docs/appendix/cities-DMAregions)). |
+|  ll | Latitude, Longitude | Bsaed on MaxMind GeoIP dataset (optional). |
 
 ### 18F's dotgov-domains Data
 
