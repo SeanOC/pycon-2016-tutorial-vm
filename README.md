@@ -139,7 +139,7 @@ Below is a sample decode object as well as a description of the provided fields:
 
 ### 18F's dotgov-domains Data
 
-We'll also be using data based on the [mapping](https://github.com/GSA/data/blob/gh-pages/dotgov-domains/2014-12-01-full.csv) of domains to agencies provided by [18f](https://18f.gsa.gov/).  To simplify things in the tutorial we've run a procees to generate per-global hash mappings (URLs are kind of complicated).
+We'll also be using data based on the [mapping](https://github.com/GSA/data/blob/gh-pages/dotgov-domains/2014-12-01-full.csv) of domains to agencies provided by [18F](https://18f.gsa.gov/).  To simplify things in the tutorial we've run a procees to generate per-global hash mappings (URLs are kind of complicated).
 
 You can find this mapped data in your VM at `/vagrant/sample_data/agency_map` and on HDFS at `hdfs:///user/vagrant/sample_data/agency_map`.
 
