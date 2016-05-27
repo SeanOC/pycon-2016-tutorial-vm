@@ -114,7 +114,7 @@ Below is a sample decode object as well as a description of the provided fields:
 }
 ```
 
-| Key |  NAME  |  Description |
+| Key |  Name  |  Description |
 | --- | ------ | ------------ |
 |  h  | User Hash | Unique hash that we generate for each combination of shortened long URL and login.  Useful for referencing sepcific Bitlinks. |
 |  g  | Global Hash | Unique hash that we generate and share for all instances of a long URL.  Useful for referencing documents/URLs. |
