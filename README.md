@@ -143,6 +143,21 @@ We'll also be using data based on the [mapping](https://github.com/GSA/data/blob
 
 You can find this mapped data in your VM at `/vagrant/sample_data/agency_map` and on HDFS at `hdfs:///user/vagrant/sample_data/agency_map`.
 
+Below is an example mapping object.
+
+```JSON
+{
+  "Global Hash": "1scWYcS",
+  "City": "Bethesda",
+  "State": "MD",
+  "Agency": "Department of Health And Human Services",
+  "Hostname": "www.ncbi.nlm.nih.gov",
+  "Domain Name": "nih.gov",
+  "Domain Type": "Federal Agency"
+}
+```
+
+Note that the `Global Hash` field in this object, maps directly to the `g` field in the decode objects.
 
 
 ## Support
