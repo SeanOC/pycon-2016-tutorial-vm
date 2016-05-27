@@ -160,6 +160,19 @@ Below is an example mapping object.
 Note that the `Global Hash` field in this object, maps directly to the `g` field in the decode objects.
 
 
+## Exercise Files
+
+We've included completed versions of each of the exercises that we will cover in the tutorial so that you have a working reference version to look at and play with.
+
+You can find the exercies on [Github](https://github.com/sarguido/large-scale-data-analysis).  Additionally, we've included a script to automatically download and upadte a copy of exercises on your vm.
+
+Once you have SSH'd into your vm (`vagrant ssh` from the same directory that contains this file), run the following commands to update your exercise files:
+
+```
+cd /vagrant
+./refresh_exercises.sh
+```
+
 ## Support
 
 If you run in any problem or have any questions, feel free to reach out to me at sean@seanoc.com.  Otherwise, we'll be taking a few minutes at the start of the tutorial to handle any remaining environment setup issues.
