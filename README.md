@@ -1,6 +1,6 @@
 # VM Stuffs
 
-Trying to get everybody to install hadoop and spark on thier environment as part of the tutorial is a path to dispare and madness.  Accordingly, we're going to provide everybody with a VM with everything pre-installed to minimize the install-fest portion of the day.
+Trying to get everybody to install hadoop and spark on their environment as part of the tutorial is a path to despair and madness.  Accordingly, we're going to provide everybody with a VM with everything pre-installed to minimize the install-fest portion of the day.
 
 We're using vagrant to manage the VM as it's free and can run on most sane platforms.
 
@@ -37,7 +37,7 @@ As the `vagrant up` command runs you may see both red and green text, this is no
 
 ## Accessing your VM
 
-All files in this directory will be available and synced to the vm in the `/vagrant` directory.  Makes it easy to edit files locally but then run them on the vm.
+All files in this directory will be available and synced to the vm in the `/vagrant` directory.  This makes it easy to edit files locally but then run them on the vm.
 
 To ssh into the vm, run:
 
@@ -67,9 +67,9 @@ After running `vagrant destroy` you can run `vagrant up` to rebuild the VM, but 
 
 ## Sample Data
 
-As part of the VM's setup process, it will automatically download some sample data that we'll be using in the tutorial and load in to both the local file system and HDFS on your VM.
+As part of the VM's setup process, it will automatically download some sample data that we'll be using in the tutorial and load into both the local file system and HDFS on your VM.
 
-We have also included a script that will rebuild/reload your sample data.  If for whatever reason, you need to get the latest version of the sample data the the following steps:
+We have also included a script that will rebuild/reload your sample data.  If for whatever reason, you need to get the latest version of the sample data follow these steps:
 
   1.  Navigate to the directory containing this file in your shell.
   2.  Run `vagrant ssh`
@@ -80,7 +80,7 @@ During the tutorial there are two data sets that you will need to care about.  B
 
 ### 1.usa.gov Decodes
 
-At Bitly, our name for a redirect event is a decode.  Whenever we perform a redirect, we generate a JSON object with information about the event (details below).  Obviously, we don't generally hand out custome data to random people, but thankfully one of our customers (the [GSA](http://http://www.gsa.gov/), an agnecy within the US Goverment) has made a portion of their Bitly data available as an open data set.  Whenever any Bitly user shortens a link to a list of known Govnernment domains, we send that click information over to the GSA.  From there, they sanitize the data a bit and make it available as a [open data set](https://github.com/usagov/1.USA.gov-Data).
+At Bitly, our name for a redirect event is a decode.  Whenever we perform a redirect, we generate a JSON object with information about the event (details below).  Obviously, we don't generally hand out customer data to random people, but thankfully one of our customers (the [GSA](http://http://www.gsa.gov/), an agency within the US Government) has made a portion of their Bitly data available as an open data set.  Whenever any Bitly user shortens a link to a list of known Govnernment domains, we send that click information over to the GSA.  From there, they sanitize the data a bit and make it available as an [open data set](https://github.com/usagov/1.USA.gov-Data).
 
 On your VM you will be able to find this data set at `/vagrant/sample_data/1usagov_data` and in HDFS at `hdfs:///user/vagrant/sample_data/1usagov_data`.
 
@@ -116,9 +116,9 @@ Below is a sample decode object as well as a description of the provided fields:
 
 | Key |  Name  |  Description |
 | --- | ------ | ------------ |
-|  h  | User Hash | Unique hash that we generate for each combination of shortened long URL and login.  Useful for referencing sepcific Bitlinks. |
+|  h  | User Hash | Unique hash that we generate for each combination of shortened long URL and login.  Useful for referencing specific Bitlinks. |
 |  g  | Global Hash | Unique hash that we generate and share for all instances of a long URL.  Useful for referencing documents/URLs. |
-|  l  | Login | User who originally shortened the link.  There are two special users of "Annonymous" and "Bitly" that are used for anon shortening and global hash generation. |
+|  l  | Login | User who originally shortened the link.  There are two special users of "Anonymous" and "Bitly" that are used for anon shortening and global hash generation. |
 |  hh | Host Header | Host header of this redirect request (some Bitlinks are valid on multiple short domains). |
 |  u  | URL | Long URL that the user was redirected to. |
 |  r  | Referrer | Referrer header of the Bitlink request. |
@@ -164,7 +164,7 @@ Note that the `Global Hash` field in this object, maps directly to the `g` field
 
 We've included completed versions of each of the exercises that we will cover in the tutorial so that you have a working reference version to look at and play with.
 
-You can find the exercies on [Github](https://github.com/sarguido/large-scale-data-analysis).  Additionally, we've included a script to automatically download and upadte a copy of exercises on your vm.
+You can find the exercies on [Github](https://github.com/sarguido/large-scale-data-analysis).  Additionally, we've included a script to automatically download and update a copy of exercises on your vm.
 
 Once you have SSH'd into your vm (`vagrant ssh` from the same directory that contains this file), run the following commands to update your exercise files:
 
